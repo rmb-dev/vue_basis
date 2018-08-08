@@ -21,8 +21,8 @@
         name: 'Vue! '
       },
       methods: {
-        changeName: function(){
-
+        changeName: function(event){
+          this.name = event.target.value
         }
       }
 

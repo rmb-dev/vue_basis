@@ -9,16 +9,18 @@
 <body>
   <div id="app">
 
-<h2>
-  <a href="http://google.ca" target="_blank" v-on:click.prevent="">Google.ca</a>
-</h2>
+    <h2>
+      <a href="http://google.ca" target="_blank" v-on:click.prevent="">Google.ca</a>
+    </h2>
 
-<h2 v-on:mousemove="handleMouseMove">
-  X: {{ x }} \ Y: {{ y }}
+    <h2 v-on:mousemove="handleMouseMove">
+      X: {{ x }} \ Y: {{ y }}
+    <span v-on:mousemove.stop="">Don't change here</span>
+    </h2>
 
-<span v-on:mousemove.stop="">Don't change here</span>
+    <hr>
 
-</h2>
+    <input type="text" v-on:keyup.enter="alertValue">
 
   </div>
 
@@ -32,9 +34,12 @@
         y: 0
       },
       methods: {
-        handleMouseMove: function (event) {
+        handleMouseMove: function(event) {
           this.x = event.clientX
           this.y = event.clientY
+        },
+        alertValue: function(event) {
+          alert(event.target.value)
         }
       }
     })

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Vue JS</title>
+</head>
+<body>
+   <h2 v-if="isVisible">I'm visible!</h2>
+   <h2 v-else>I'm not visible!</h2>
+
+   <button @click="isVisible = !isVisible">Toggle</button>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+  <script type="text/javascript">
+
+    new Vue({
+      el: '#app',
+      data: {
+        isVisible: true
+      },
+      methods: {
+
+      }
+
+    })
+
+  </script>
+
+</body>
+</html>

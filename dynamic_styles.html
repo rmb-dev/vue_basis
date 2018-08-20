@@ -23,13 +23,8 @@
 <body>
   <div id="app">
 
-    <div
-      class="circle"
-      :style="circleClasses">
-    </div>
-    <div
-      class="circle">
-    </div>
+    <div class="circle" :style="circleClasses"></div>
+    <div class="circle" :style="[circleClasses, {'width': height + 'px'}]"></div>
 
     <input type="text" v-model="color">
     <input type="text" v-model="height">
@@ -49,7 +44,7 @@
         circleClasses: function() {
           return {
             'background': this.color,
-            'height': this.height + 'px'
+            'height': <this className=""></this>height + 'px'
           }
         }
       }

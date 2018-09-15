@@ -5,14 +5,23 @@
   <title>Vue JS</title>
 </head>
 <body>
-   <h2 v-if="isVisible">I'm visible!</h2>
-   <h2 v-else>I'm not visible!</h2>
-<div id="app">
 
+<div id="app">
     <ul>
-      <li v-for="person"></li>
+      <li v-for="(person, index) of people">{{ index + 1 }}. {{ person.name }} - <b>{{ person.age}}</b></li>
     </ul>
 
+    <hr>
+
+    <ol>
+      <li v-for="num of 1">{{ num }}</li>
+    </ol>
+
+    <hr>
+
+    <ul>
+      <li v-for="(value, key, inndex) in person"><em>{{ index + 1 }}</em> <b>{{ key }}</b> {{ value }}</li>
+    </ul>
 
 </div>
 
@@ -24,10 +33,15 @@
       el: '#app',
       data: {
         people: [
-          'Max',
-          'Kyle',
-          'Luke'
-        ]
+          {name: 'Max', age: 20},
+          {name: 'Kyle', age: 25},
+          {name: 'Luke', age: 30}
+        ],
+        person: {
+          name: Max,
+          age: 20,
+          job: 'Frontend'
+        }
       },
       methods: {
 
